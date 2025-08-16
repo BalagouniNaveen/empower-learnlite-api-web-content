@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String   @id @default(cuid())
+  phone    String?  @unique
+  name     String?
+  locale   String   @default("en")
+  progress Progress[]
+  sessions Session[]
+}
+
+model Lesson {
+  id       String    @id @default(cuid())
+  slug     String    @unique
+  topic    String
+  locale   String    @default("en")
+  title    String
+  body     String
+  estMins  Int       @default(3)
+  questions Question[]
+}
+
+model Question {
+  id        String  @id @default(cuid())
+  lessonId  String
+  lesson    Lesson  @relation(fields: [lessonId], references: [id])
+  prompt    String
+  optionA   String
+  optionB   String
+  optionC   String
+  optionD   String
+  correct   Int     // 0..3
+}
+
+model Progress {
+  id       String  @id @default(cuid())
+  userId   String
+  user     User    @relation(fields: [userId], references: [id])
+  lessonId String
+  status   String  @default("started") // started|completed
+  score    Int     @default(0)
+  updatedAt DateTime @updatedAt
+}
+
+model Session { // for SMS state machine
+  id        String  @id @default(cuid())
+  userId    String
+  user      User    @relation(fields: [userId], references: [id])
+  state     String  @default("idle")
+  payload   String  @default("") // JSON blob
+  updatedAt DateTime @updatedAt
+}
