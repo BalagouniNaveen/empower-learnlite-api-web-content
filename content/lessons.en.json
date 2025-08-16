@@ -1,0 +1,49 @@
+[
+  {
+    "slug": "math-fractions-1",
+    "topic": "Math Basics",
+    "title": "Understanding Fractions",
+    "body": "A fraction shows parts of a whole. 1/2 means the whole is split into two equal parts and we take one.",
+    "estMins": 3,
+    "questions": [
+      {
+        "prompt": "What does 1/2 mean?",
+        "options": ["1 out of 3", "1 out of 2", "2 out of 1", "None"],
+        "answer": 1
+      },
+      {
+        "prompt": "Which is bigger?",
+        "options": ["1/2", "1/3", "Equal", "Can't say"],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "slug": "eng-reading-1",
+    "topic": "English",
+    "title": "Reading Tip: Skim First",
+    "body": "Skim the text to get the main idea, then read slowly. This improves understanding.",
+    "estMins": 2,
+    "questions": [
+      {
+        "prompt": "What should you do first?",
+        "options": ["Read slowly", "Memorize", "Skim", "Skip"],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "slug": "science-plants-1",
+    "topic": "Science",
+    "title": "Plants Need Light",
+    "body": "Plants use sunlight to make food through photosynthesis. Light is essential for growth.",
+    "estMins": 2,
+    "questions": [
+      {
+        "prompt": "What do plants use to make food?",
+        "options": ["Soil", "Sunlight", "Water only", "Air only"],
+        "answer": 1
+      }
+    ]
+  }
+]
