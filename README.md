@@ -244,9 +244,6 @@ empower-learnlite/                  # Root folder of the LearnLite project
 │        ├─ Quiz.tsx                 # Page to take a quiz
 │        └─ Dashboard.tsx            # Teacher dashboard for tracking student progress
 
-You can write your **full backend code in README** in a **clear, file-by-file way** by structuring it like this:
-
----
 
 # LearnLite API — File-by-File Guide
 
